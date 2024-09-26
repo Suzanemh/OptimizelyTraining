@@ -1,22 +1,17 @@
 ﻿using EPiServer.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
-using SUZTraining.Models.Pages; // Dette er hvor SamplePage-modellen ligger
+using SUZTraining.Models.Pages;
+using SUZTraining.Models.ViewModels; // Dette er hvor SamplePage-modellen ligger
 
-public class SamplePageController : Controller
+public class SamplePageController : PageController<SamplePage>
 {
-	public IActionResult Index()
+	public IActionResult Index(SamplePage currentPage)
 	{
-		var model = new SamplePage
+		var model = new SamplePageViewModel
 		{
-			Heading = "Sample Heading",
-			MainBody = new XhtmlString("Sample Main Body Content")
+			currentPage = currentPage
 		};
 
-		if (model == null || model.Heading == null || model.MainBody == null)
-		{
-			// Håndter null-tilfelle
-			return View("Error");
-		}
 
 		return View(model);
 	}

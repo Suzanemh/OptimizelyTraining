@@ -29,6 +29,9 @@ namespace SUZTraining
                 .AddCms()
                 .AddAdminUserRegistration()
                 .AddEmbeddedLocalization<Startup>();
+
+            services.AddControllersWithViews();
+                
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -41,15 +44,16 @@ namespace SUZTraining
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
+           
             app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
-				endpoints.MapControllerRoute(
-					name: "default",
-					pattern: "{controller=Home}/{action=Index}/{id?}");
+				
+					
 
 				endpoints.MapContent(); // For EPiServer innhold
+                endpoints.MapControllers();
 			});
 
 		}

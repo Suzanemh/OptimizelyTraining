@@ -1,4 +1,13 @@
-﻿@model SUZTraining.Models.Pages.SamplePage
+﻿
+@model SUZTraining.Models.ViewModels.SamplePageViewModel
 
-<h1>@Model.Heading</h1>
-<div>@Model.MainBody</div>
+<h1 @Html.EditAttributes(m => m.currentPage.Heading)>
+    @Model.currentPage.Heading
+</h1>
+
+<div>
+    @Html.PropertyFor(m => m.currentPage.MainBody)
+</div>
+
+
+
