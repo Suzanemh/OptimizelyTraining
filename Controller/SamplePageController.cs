@@ -2,11 +2,22 @@
 using Microsoft.AspNetCore.Mvc;
 using SUZTraining.Models.Pages; // Dette er hvor SamplePage-modellen ligger
 
-	public class SamplePageController : PageController<SamplePage>
+public class SamplePageController : Controller
+{
+	public IActionResult Index()
 	{
-		public ActionResult Index(SamplePage currentPage)
+		var model = new SamplePage
 		{
-			return View(currentPage);
-		}
-	}
+			Heading = "Sample Heading",
+			MainBody = new XhtmlString("Sample Main Body Content")
+		};
 
+		if (model == null || model.Heading == null || model.MainBody == null)
+		{
+			// Håndter null-tilfelle
+			return View("Error");
+		}
+
+		return View(model);
+	}
+}
