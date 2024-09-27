@@ -1,0 +1,17 @@
+﻿@model SUZTraining.Models.Pages.ArticlePage
+
+<h1>@Model.ArticleHeading</h1>
+
+<div>
+    @Html.Raw(Model.ArticleBody.ToHtmlString())
+</div>
+
+@if (Model.ArticleImage != null)
+
+
+
+{
+    <div>
+        <img src="@Url.ContentUrl(Model.ArticleImage)" alt="@Model.ArticleHeading" />
+    </div>
+}

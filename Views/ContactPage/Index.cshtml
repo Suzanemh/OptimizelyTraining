@@ -1,0 +1,22 @@
+﻿@model SUZTraining.Models.Pages.ContactPage
+
+@if (Model != null)
+
+{
+    <h1>@Model.ContactHeading</h1>
+
+    <div>
+        @Html.Raw(Model.ContactInformation?.ToHtmlString() ?? string.Empty)
+    </div>
+
+    <div>
+        @Html.Raw(Model.ContactForm?.ToHtmlString() ?? string.Empty)
+    </div>
+}
+
+else
+
+{
+    <p>Contact page data is not available.</p>
+}
+
