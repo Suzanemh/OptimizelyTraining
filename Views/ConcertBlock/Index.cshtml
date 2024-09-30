@@ -1,0 +1,32 @@
+﻿@model SUZTraining.Models.Blocks.ConcertBlock
+
+<div class="concert-block">
+    <div class="concert-image">
+        <img src="@Url.ContentUrl(Model.ConcertImage)" alt="@Model.Title" />
+    </div>
+    <div class="concert-details">
+        <h2>@Model.Title</h2>
+        <p>@Model.Date</p>
+        <p>@Model.Time</p>
+    </div>
+</div>
+
+<style>
+    .concert-block {
+        text-align: center;
+        background-color: #e7ebf0; /* light blue */
+        padding: 20px;
+    }
+    .concert-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    .concert-details h2 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+    .concert-details p {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+</style>

@@ -12,6 +12,14 @@
     <div>
         @Html.Raw(Model.ContactForm?.ToHtmlString() ?? string.Empty)
     </div>
+
+    @if (Model.ColoredTextBlock != null && Model.ColoredTextBlock.Items.Any())
+
+    {
+        <div>
+            @Html.PropertyFor(m => m.ColoredTextBlock)
+        </div>
+    }
 }
 
 else
@@ -19,4 +27,5 @@ else
 {
     <p>Contact page data is not available.</p>
 }
+
 

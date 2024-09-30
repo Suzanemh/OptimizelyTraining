@@ -1,0 +1,16 @@
+﻿@model SUZTraining.Models.Blocks.ColoredTextBlock
+
+@if (!string.IsNullOrEmpty(Model.Text) && !string.IsNullOrEmpty(Model.BackgroundColor))
+{
+    <div class="colored-text-block" style="background-color: @Model.BackgroundColor; padding: 20px; border-radius: 5px;">
+        <div class="text">
+            @Model.Text
+        </div>
+    </div>
+}
+else
+{
+    <p>Block content is missing.</p>
+}
+
+

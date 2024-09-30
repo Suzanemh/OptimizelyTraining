@@ -19,6 +19,10 @@ namespace SUZTraining.Models.Pages
         [CultureSpecific]
         [Display(Name = "Contact Form", Description = "The contact form", GroupName = SystemTabNames.Content, Order = 50)]
         public virtual XhtmlString ContactForm { get; set; }
+
+        //Block
+        [Display(Name = "Colored Text Block", Description = "A block with a colored background and text", GroupName = SystemTabNames.Content, Order = 60)]
+        public virtual ContentArea ColoredTextBlock { get; set; }
     }
 }
 
